@@ -64,7 +64,7 @@ class Ballon:
         else:
             self.y += self.speed
         
-        if(self.y > 580):
+        if(self.y > 600 - self.size / 2):
             self.downcnt = 3
 
 def handle_events():
