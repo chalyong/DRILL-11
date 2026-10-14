@@ -58,9 +58,13 @@ class Ballon:
         self.image.draw(self.x, self.y, self.size, self.size)
 
     def update(self):
+        if(self.downcnt > 0):
+            pass
+        
         self.y += self.speed
         if(self.y > 580):
             self.speed = 0
+            self.downcnt = 3
 
 def handle_events():
     global running
