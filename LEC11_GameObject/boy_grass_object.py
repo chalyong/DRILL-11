@@ -55,7 +55,7 @@ class Ballon:
         pass
 
     def draw(self):
-        self.image.draw(self.x, self.y)
+        self.image.draw(self.x, self.y, self.size, self.size)
 
     def update(self):
         self.y += self.speed
