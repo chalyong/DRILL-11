@@ -45,7 +45,15 @@ class Zombie:
         self.x += 5
 
 class Ballon:
-    pass
+    def __init__(self):
+        pass
+
+    def draw(self):
+        pass
+
+    def update(self):
+        pass
+    
 
 def handle_events():
     global running
