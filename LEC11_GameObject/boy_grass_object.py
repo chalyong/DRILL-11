@@ -47,7 +47,7 @@ class Zombie:
 class Ballon:
     def __init__(self):
         self.x = random.randint(100, 700)
-        self.y = 500
+        self.y = 0
         self.image = load_image('ball41x41.png')
         self.speed = random.randint(1, 10)
         self.size = random.randint(10, 50)
