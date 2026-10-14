@@ -76,6 +76,7 @@ def reset_world():
     global team
     global world
     global zombie
+    global ballon_zip
 
     running = True
     world = []
@@ -88,6 +89,9 @@ def reset_world():
 
     zombie = Zombie()
     world.append(zombie)
+
+    ballon_zip = [Ballon() for i in range(20)]
+    world += ballon_zip
 
 def update_world():
     for obj in world:
