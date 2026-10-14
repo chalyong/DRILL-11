@@ -59,11 +59,12 @@ class Ballon:
 
     def update(self):
         if(self.downcnt > 0):
-            pass
+            self.y -= self.speed
+            self.downcnt -= 1
+        else:
+            self.y += self.speed
         
-        self.y += self.speed
         if(self.y > 580):
-            self.speed = 0
             self.downcnt = 3
 
 def handle_events():
