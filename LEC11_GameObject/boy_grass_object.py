@@ -49,6 +49,9 @@ class Ballon:
         self.x = 0
         self.y = 0
         self.image = load_image('ball41x41.png')
+        self.speed = 0
+        self.size = 0
+        self.downcnt = 0
         pass
 
     def draw(self):
