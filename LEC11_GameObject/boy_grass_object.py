@@ -44,6 +44,9 @@ class Zombie:
         self.frame = (self.frame + 1) % 10
         self.x += 5
 
+class Ballon:
+    pass
+
 def handle_events():
     global running
     events = get_events()
