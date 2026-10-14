@@ -50,7 +50,7 @@ class Ballon:
         self.y = 0
         self.image = load_image('ball41x41.png')
         self.speed = random.randint(1, 10)
-        self.size = random.randint(10, 50)
+        self.size = random.randint(20, 60)
         self.downcnt = 0
         pass
 
