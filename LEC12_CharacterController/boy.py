@@ -8,7 +8,7 @@ class Boy:
     RUN = 'RUN'
     SLEEP = 'SLEEP'
     IDLE_DURATION = 5.0
-    RUN_SPEED = 10
+    RUN_SPEED = 5
     FRAME_WIDTH = 100
     SCREEN_WIDTH = 800
     MIN_X = FRAME_WIDTH // 2
