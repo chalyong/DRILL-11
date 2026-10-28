@@ -13,11 +13,11 @@ class AutoRun:
 
     def move(self):
         self.owner.x += self.owner.AUTO_RUN_SPEED * self.owner.face_dir
-        if self.owner.x >= self.owner.MAX_X:
-            self.owner.x = self.owner.MAX_X
+        if self.owner.x >= self.owner.AUTO_MAX_X:
+            self.owner.x = self.owner.AUTO_MAX_X
             self.owner.face_dir = -1
-        elif self.owner.x <= self.owner.MIN_X:
-            self.owner.x = self.owner.MIN_X
+        elif self.owner.x <= self.owner.AUTO_MIN_X:
+            self.owner.x = self.owner.AUTO_MIN_X
             self.owner.face_dir = 1
 
 
