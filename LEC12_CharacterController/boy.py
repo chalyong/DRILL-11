@@ -3,6 +3,12 @@ import math
 import pico2d
 from transitions import Machine
 
+
+class AutoRun:
+    def __init__(self, owner):
+        self.owner = owner
+
+
 class Boy:
     IDLE = 'IDLE'
     RUN = 'RUN'
