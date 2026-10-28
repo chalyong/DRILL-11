@@ -8,6 +8,9 @@ class AutoRun:
     def __init__(self, owner):
         self.owner = owner
 
+    def elapsed(self):
+        return pico2d.get_time() - self.owner.auto_run_started_at
+
 
 class Boy:
     IDLE = 'IDLE'
