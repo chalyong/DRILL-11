@@ -148,14 +148,16 @@ class Boy:
         self.frame = 0
 
     def draw(self):
-        if self.state == self.RUN:
+        if self.state in (self.RUN, self.AUTO_RUN):
             clip_y = 100 if self.face_dir == 1 else 0
         elif self.face_dir == 1:
             clip_y = 300
         else:
             clip_y = 200
 
-        frame = self.frame if self.state in (self.IDLE, self.RUN) else 0
+        frame = self.frame if self.state in (
+            self.IDLE, self.RUN, self.AUTO_RUN
+        ) else 0
         if self.state == self.SLEEP:
             self.image.clip_composite_draw(
                 frame * 100,
