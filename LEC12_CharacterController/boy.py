@@ -47,6 +47,12 @@ class Boy:
             after='_enter_run',
         )
         self.state_machine.add_transition(
+            trigger='auto_run',
+            source=self.IDLE,
+            dest=self.AUTO_RUN,
+            after='_enter_auto_run',
+        )
+        self.state_machine.add_transition(
             trigger='stop_running',
             source=self.RUN,
             dest=self.IDLE,
