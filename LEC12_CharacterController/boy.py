@@ -118,10 +118,10 @@ class Boy:
                     and self.state == self.SLEEP):
                 self.wake_up()
             elif (event.key in (pico2d.SDLK_LEFT, pico2d.SDLK_RIGHT)
-                  and self.state in (self.IDLE, self.SLEEP)):
+                  and self.state in (self.IDLE, self.SLEEP, self.AUTO_RUN)):
                 self.pressed_directions.add(event.key)
                 self.face_dir = -1 if event.key == pico2d.SDLK_LEFT else 1
-                if self.state in (self.IDLE, self.SLEEP):
+                if self.state in (self.IDLE, self.SLEEP, self.AUTO_RUN):
                     self.run()
         elif (event.type == pico2d.SDL_KEYUP
               and event.key in self.pressed_directions):
