@@ -11,6 +11,9 @@ class AutoRun:
     def elapsed(self):
         return pico2d.get_time() - self.owner.auto_run_started_at
 
+    def move(self):
+        self.owner.x += self.owner.AUTO_RUN_SPEED * self.owner.face_dir
+
 
 class Boy:
     IDLE = 'IDLE'
@@ -96,6 +99,8 @@ class Boy:
         elif self.state == self.AUTO_RUN:
             if self.auto_run.elapsed() >= self.AUTO_RUN_DURATION:
                 self.stop_auto_run()
+            else:
+                self.auto_run.move()
 
     def handle_event(self, event):
         if event.type == pico2d.SDL_KEYDOWN:
