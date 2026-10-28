@@ -36,7 +36,7 @@ class Boy:
         self.idle_started_at = pico2d.get_time()
         self.state_machine = Machine(
             model=self,
-            states=[self.IDLE, self.RUN, self.SLEEP],
+            states=[self.IDLE, self.RUN, self.AUTO_RUN, self.SLEEP],
             initial=self.IDLE,
             auto_transitions=False,
         )
