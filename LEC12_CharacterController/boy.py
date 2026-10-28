@@ -34,6 +34,7 @@ class Boy:
         self.auto_run = AutoRun(self)
         self.sleep_angle = -self.SLEEP_ANGLE
         self.idle_started_at = pico2d.get_time()
+        self.auto_run_started_at = None
         self.state_machine = Machine(
             model=self,
             states=[self.IDLE, self.RUN, self.AUTO_RUN, self.SLEEP],
@@ -107,6 +108,10 @@ class Boy:
         )
 
     def _enter_run(self):
+        self.frame = 0
+
+    def _enter_auto_run(self):
+        self.auto_run_started_at = pico2d.get_time()
         self.frame = 0
 
     def _reset_idle_timer(self):
