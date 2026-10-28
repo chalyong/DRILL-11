@@ -6,9 +6,12 @@ from transitions import Machine
 class Boy:
     IDLE = 'IDLE'
     RUN = 'RUN'
+    AUTO_RUN = 'AUTO_RUN'
     SLEEP = 'SLEEP'
     IDLE_DURATION = 5.0
     RUN_SPEED = 5
+    AUTO_RUN_DURATION = 5.0
+    AUTO_RUN_SPEED = 15
     FRAME_WIDTH = 100
     SCREEN_WIDTH = 800
     MIN_X = FRAME_WIDTH // 2
