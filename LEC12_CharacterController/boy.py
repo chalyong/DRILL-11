@@ -63,6 +63,12 @@ class Boy:
             after='_reset_idle_timer',
         )
         self.state_machine.add_transition(
+            trigger='stop_auto_run',
+            source=self.AUTO_RUN,
+            dest=self.IDLE,
+            after='_reset_idle_timer',
+        )
+        self.state_machine.add_transition(
             trigger='sleep',
             source=self.IDLE,
             dest=self.SLEEP,
@@ -119,6 +125,7 @@ class Boy:
 
     def _reset_idle_timer(self):
         self.idle_started_at = pico2d.get_time()
+        self.auto_run_started_at = None
         self.frame = 0
 
     def draw(self):
