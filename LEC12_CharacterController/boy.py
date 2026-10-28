@@ -31,6 +31,7 @@ class Boy:
         self.pressed_directions = set()
         self.image = pico2d.load_image('animation_sheet.png')
         self.state: str = self.IDLE
+        self.auto_run = AutoRun(self)
         self.sleep_angle = -self.SLEEP_ANGLE
         self.idle_started_at = pico2d.get_time()
         self.state_machine = Machine(
