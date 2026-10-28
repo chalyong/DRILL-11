@@ -174,4 +174,18 @@ class Boy:
                 100,
             )
         else:
-            self.image.clip_draw(frame * 100, clip_y, 100, 100, self.x, self.y)
+            draw_size = (
+                self.AUTO_RUN_DRAW_SIZE
+                if self.state == self.AUTO_RUN
+                else self.DRAW_SIZE
+            )
+            self.image.clip_draw(
+                frame * 100,
+                clip_y,
+                100,
+                100,
+                self.x,
+                self.y,
+                draw_size,
+                draw_size,
+            )
