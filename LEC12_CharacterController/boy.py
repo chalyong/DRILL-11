@@ -43,7 +43,7 @@ class Boy:
         self.pressed_directions = set()
         self.image = pico2d.load_image('animation_sheet.png')
         self.state: str = self.IDLE
-        self.auto_run = AutoRun(self)
+        self.auto_run_controller = AutoRun(self)
         self.sleep_angle = -self.SLEEP_ANGLE
         self.idle_started_at = pico2d.get_time()
         self.auto_run_started_at = None
@@ -103,15 +103,18 @@ class Boy:
             self.frame = (self.frame + 1) % 8
 
         elif self.state == self.AUTO_RUN:
-            if self.auto_run.elapsed() >= self.AUTO_RUN_DURATION:
+            if self.auto_run_controller.elapsed() >= self.AUTO_RUN_DURATION:
                 self.stop_auto_run()
             else:
-                self.auto_run.move()
+                self.auto_run_controller.move()
                 self.frame = (self.frame + 1) % 8
 
     def handle_event(self, event):
         if event.type == pico2d.SDL_KEYDOWN:
-            if (event.key == pico2d.SDLK_SPACE
+            if (event.key == pico2d.SDLK_a
+                    and self.state == self.IDLE):
+                self.auto_run()
+            elif (event.key == pico2d.SDLK_SPACE
                     and self.state == self.SLEEP):
                 self.wake_up()
             elif (event.key in (pico2d.SDLK_LEFT, pico2d.SDLK_RIGHT)
