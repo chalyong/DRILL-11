@@ -55,7 +55,7 @@ class Boy:
         )
         self.state_machine.add_transition(
             trigger='run',
-            source=[self.IDLE, self.SLEEP],
+            source=[self.IDLE, self.SLEEP, self.AUTO_RUN],
             dest=self.RUN,
             after='_enter_run',
         )
