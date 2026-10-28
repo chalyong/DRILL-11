@@ -107,6 +107,7 @@ class Boy:
                 self.stop_auto_run()
             else:
                 self.auto_run.move()
+                self.frame = (self.frame + 1) % 8
 
     def handle_event(self, event):
         if event.type == pico2d.SDL_KEYDOWN:
