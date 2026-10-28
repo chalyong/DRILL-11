@@ -93,6 +93,10 @@ class Boy:
             self.x = max(self.MIN_X, min(self.x, self.MAX_X))
             self.frame = (self.frame + 1) % 8
 
+        elif self.state == self.AUTO_RUN:
+            if self.auto_run.elapsed() >= self.AUTO_RUN_DURATION:
+                self.stop_auto_run()
+
     def handle_event(self, event):
         if event.type == pico2d.SDL_KEYDOWN:
             if (event.key == pico2d.SDLK_SPACE
